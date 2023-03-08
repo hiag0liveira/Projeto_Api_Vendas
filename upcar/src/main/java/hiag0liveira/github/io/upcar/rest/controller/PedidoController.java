@@ -1,12 +1,12 @@
 package hiag0liveira.github.io.upcar.rest.controller;
 
-import io.github.dougllasfps.domain.entity.Pedido;
-import io.github.dougllasfps.rest.dto.PedidoDTO;
-import io.github.dougllasfps.service.PedidoService;
-import org.springframework.http.HttpStatus;
+
+import hiag0liveira.github.io.upcar.domain.entity.Pedido;
+import hiag0liveira.github.io.upcar.rest.dto.PedidoDTO;
+import hiag0liveira.github.io.upcar.service.PedidoService;
 import org.springframework.web.bind.annotation.*;
 
-import static org.springframework.http.HttpStatus.*;
+import static org.springframework.http.HttpStatus.CREATED;
 
 @RestController
 @RequestMapping("/api/pedidos")
@@ -23,6 +23,10 @@ public class PedidoController {
     public Integer save( @RequestBody PedidoDTO dto ){
         Pedido pedido = service.salvar(dto);
         return pedido.getId();
+    }
+
+    public void testarDevTools(){
+
     }
 
 }

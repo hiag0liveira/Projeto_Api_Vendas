@@ -1,8 +1,7 @@
 package hiag0liveira.github.io.upcar.rest.controller;
 
-import io.github.dougllasfps.domain.entity.Cliente;
-import io.github.dougllasfps.domain.entity.Produto;
-import io.github.dougllasfps.domain.repository.Produtos;
+import hiag0liveira.github.io.upcar.domain.entity.Produto;
+import hiag0liveira.github.io.upcar.domain.repositorio.Produtos;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.HttpStatus;
@@ -12,6 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.*;
+
 
 @RestController
 @RequestMapping("/api/produtos")
@@ -25,7 +25,7 @@ public class ProdutoController {
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public Produto save( @RequestBody Produto produto ){
+    public Produto save(@RequestBody Produto produto ){
         return repository.save(produto);
     }
 
@@ -35,12 +35,12 @@ public class ProdutoController {
         repository
                 .findById(id)
                 .map( p -> {
-                   produto.setId(p.getId());
-                   repository.save(produto);
-                   return produto;
+                    produto.setId(p.getId());
+                    repository.save(produto);
+                    return produto;
                 }).orElseThrow( () ->
-                new ResponseStatusException(HttpStatus.NOT_FOUND,
-                        "Produto não encontrado."));
+                        new ResponseStatusException(NOT_FOUND,
+                                "Produto não encontrado."));
     }
 
     @DeleteMapping("{id}")
@@ -52,8 +52,8 @@ public class ProdutoController {
                     repository.delete(p);
                     return Void.TYPE;
                 }).orElseThrow( () ->
-                new ResponseStatusException(HttpStatus.NOT_FOUND,
-                        "Produto não encontrado."));
+                        new ResponseStatusException(HttpStatus.NOT_FOUND,
+                                "Produto não encontrado."));
     }
 
     @GetMapping("{id}")
@@ -61,8 +61,8 @@ public class ProdutoController {
         return repository
                 .findById(id)
                 .orElseThrow( () ->
-                new ResponseStatusException(HttpStatus.NOT_FOUND,
-                        "Produto não encontrado."));
+                        new ResponseStatusException(HttpStatus.NOT_FOUND,
+                                "Produto não encontrado."));
     }
 
     @GetMapping
