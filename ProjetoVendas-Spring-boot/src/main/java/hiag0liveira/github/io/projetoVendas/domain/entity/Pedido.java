@@ -1,11 +1,11 @@
 package hiag0liveira.github.io.projetoVendas.domain.entity;
 
 import hiag0liveira.github.io.projetoVendas.domain.enums.StatusPedido;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;

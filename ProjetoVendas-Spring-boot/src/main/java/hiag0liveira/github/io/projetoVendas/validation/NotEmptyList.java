@@ -1,9 +1,9 @@
 package hiag0liveira.github.io.projetoVendas.validation;
 
 import hiag0liveira.github.io.projetoVendas.validation.constraintvalidation.NotEmptyListValidator;
-import jakarta.validation.Constraint;
-import jakarta.validation.Payload;
 
+import javax.validation.Constraint;
+import javax.validation.Payload;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
