@@ -1,9 +1,9 @@
 package hiag0liveira.github.io.projetoVendas.validation.constraintvalidation;
 
 import hiag0liveira.github.io.projetoVendas.validation.NotEmptyList;
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
 
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
 import java.util.List;
 
 public class NotEmptyListValidator
